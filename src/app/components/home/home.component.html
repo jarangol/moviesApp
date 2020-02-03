@@ -1,0 +1,12 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Movies App</h1>
+        <p class="lead">This is a movies app</p>
+    </div>
+</div>
+
+<div class="container">
+    <app-galery [movies]="inTheater|slice:0:6" title="Movies in Theater"></app-galery>
+    <app-galery [movies]="populars|slice:0:6" title="Populars"></app-galery>
+    <app-galery [movies]="kidsPopulars|slice:0:6" title="Kids Populars"></app-galery>
+</div>

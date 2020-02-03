@@ -1,0 +1,31 @@
+<div class="container main-container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Search:</label>
+                <input type="text" [(ngModel)]="search"
+                    name="search"
+                    (keyup.enter)="searchMovie()"
+                    type="text"
+                    class="form-control"
+                    placeholder="Search a movie">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="card-columns">
+            <div class="card" *ngFor="let movie of _ms.movies">
+                <img class="card-img-top img-fluid" [src]="movie|movieImage" alt="movie.title">
+                <div class="card-block">
+                    <h4 class="card-title">{{movie.title}}</h4>
+                    <p class="card-text text-justify">{{movie.overview | slice:0:250 }}</p>
+                    <button 
+                        [routerLink]="['/movie', movie.id, 'movie', search]"
+                        type="button" class="btn btn-outline-info"> Show more...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
